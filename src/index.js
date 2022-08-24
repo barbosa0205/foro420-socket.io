@@ -1,5 +1,5 @@
 const express = require('express')
-const socketIo = require('socket.io')
+const { Server } = require('socket.io')
 const http = require('http')
 
 const cors = require('cors')
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 //configure socket.io server
-const io = new socketIo.Server(server, {
+const io = new Server(server, {
   cors: {
     origin: `*`,
   },
