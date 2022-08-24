@@ -13,13 +13,11 @@ const server = http.createServer(app)
 //puerto
 const port = process.env.PORT || 3443
 
-console.log('xd')
-
 app.use(
   cors({
     origin: true,
     methods: ['GET', 'POST'],
-    credentials: true,
+    credentials: false,
   })
 )
 
