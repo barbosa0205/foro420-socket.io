@@ -1,8 +1,8 @@
-import express from 'express'
-import { Server as WebSocketServer } from 'socket.io'
-import http from 'http'
+const express = require('express')
+const socketIo = require('socket.io')
+const http = require('http')
 
-import cors from 'cors'
+const cors = require('cors')
 
 //configure express
 const app = express()
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 //configure socket.io server
-const io = new WebSocketServer(server, {
+const io = new socketIo.WebSocketServer(server, {
   cors: {
     origin: `*`,
   },
