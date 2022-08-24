@@ -11,7 +11,7 @@ const app = express()
 const server = http.createServer(app)
 
 //puerto
-const PORT = process.env.PORT || 3443
+const port = process.env.PORT || 3443
 
 app.use(
   cors({
@@ -48,6 +48,6 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(PORT, () => {
-  console.log(`Servidor corriendo en puerto ${PORT}`)
+server.listen(port, () => {
+  console.log(`Servidor corriendo en puerto ${port}`)
 })
