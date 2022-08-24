@@ -10,7 +10,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "build": "webpack src/index.js",
+    "build": "webpack",
     "dev": "npx nodemon src/index.js"
   },
   "keywords": [],
