@@ -1,6 +1,6 @@
 import express from 'express'
 import { Server as WebSocketServer } from 'socket.io'
-import https from 'https'
+import http from 'http'
 
 import cors from 'cors'
 
@@ -8,10 +8,10 @@ import cors from 'cors'
 const app = express()
 
 //configure http server
-const server = https.createServer(app)
+const server = http.createServer(app)
 
 //puerto
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3443
 
 app.use(
   cors({
@@ -22,10 +22,7 @@ app.use(
 )
 
 app.get('/', (req, res) => {
-  res.status(200).send({
-    success: true,
-    message: 'foro420-socket.io server',
-  })
+  res.status(200).send('foro-420-socket.io 🥦')
 })
 
 //configure socket.io server
