@@ -1,6 +1,6 @@
 import express from 'express'
 import { Server as WebSocketServer } from 'socket.io'
-import http from 'http'
+import https from 'https'
 
 import cors from 'cors'
 
@@ -8,7 +8,7 @@ import cors from 'cors'
 const app = express()
 
 //configure http server
-const server = http.createServer(app)
+const server = https.createServer(app)
 
 //puerto
 const PORT = process.env.PORT || 3001
@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: true,
     methods: ['GET', 'POST'],
-    credentials: false,
+    credentials: true,
   })
 )
 
