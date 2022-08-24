@@ -11,7 +11,7 @@ const app = express()
 const server = http.createServer(app)
 
 //puerto
-const PORT = process.env.PORT || 3443
+const PORT = process.env.PORT || 3001
 
 app.use(
   cors({
