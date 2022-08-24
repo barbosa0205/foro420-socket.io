@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 //configure socket.io server
-const io = new socketIo.WebSocketServer(server, {
+const io = new socketIo.Server(server, {
   cors: {
     origin: `*`,
   },
