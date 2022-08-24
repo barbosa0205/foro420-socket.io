@@ -22,7 +22,7 @@ app.use(
 )
 
 app.get('/', (req, res) => {
-  res.status(200).send('foro-420-socket.io 🥦')
+  res.send('foro-420-socket.io 🥦')
 })
 
 //configure socket.io server
