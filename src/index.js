@@ -1,6 +1,6 @@
 const express = require('express')
 const { Server } = require('socket.io')
-const http = require('http')
+const { createServer } = require('http')
 
 const cors = require('cors')
 
@@ -8,7 +8,7 @@ const cors = require('cors')
 const app = express()
 
 //configure http server
-const server = http.createServer(app)
+const server = createServer(app)
 
 //puerto
 const port = process.env.PORT || 3443
@@ -36,12 +36,13 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
   io.to(socket.id).emit('connected', socket.id)
   console.log('socket', socket.id, 'connected')
-  socket.emit('verifyAlerts', 'verifyAlerts')
 
-  socket.on('notificationAlert', ({ socketEmisor, socketReceptor, data }) => {
-    console.log('notification', data)
-    socket.to(socketReceptor).emit('notification', data)
-  })
+  // socket.emit('verifyAlerts', 'verifyAlerts')
+
+  // socket.on('notificationAlert', ({ socketEmisor, socketReceptor, data }) => {
+  //   console.log('notification', data)
+  //   socket.to(socketReceptor).emit('notification', data)
+  // })
 
   socket.on('disconnect', () => {
     console.log('user disconnected')
