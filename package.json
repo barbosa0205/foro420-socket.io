@@ -2,14 +2,15 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "socket.io": "^4.5.1"
+    "socket.io": "^4.5.1",
+    "webpack": "^5.74.0"
   },
   "name": "foro420-socket.io",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "build": "node src/index.js",
+    "build": "webpack src/index.js",
     "dev": "npx nodemon src/index.js"
   },
   "keywords": [],
