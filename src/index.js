@@ -35,12 +35,12 @@ io.on('connection', (socket) => {
   io.to(socket.id).emit('connected', socket.id)
   console.log('socket', socket.id, 'connected')
 
-  // socket.emit('verifyAlerts', 'verifyAlerts')
+  socket.emit('verifyAlerts', 'verifyAlerts')
 
-  // socket.on('notificationAlert', ({ socketEmisor, socketReceptor, data }) => {
-  //   console.log('notification', data)
-  //   socket.to(socketReceptor).emit('notification', data)
-  // })
+  socket.on('notificationAlert', ({ socketEmisor, socketReceptor, data }) => {
+    console.log('notification', data)
+    socket.to(socketReceptor).emit('notification', data)
+  })
 
   socket.on('disconnect', () => {
     console.log('user disconnected.')
